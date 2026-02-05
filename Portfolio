@@ -1,0 +1,93 @@
+# Titanic Survival Analysis using R
+
+## Project Overview
+This project analyzes passenger data from the Titanic disaster to identify key factors associated with survival. Using exploratory data analysis (EDA) and a binary classification model, the project examines how demographic and socio-economic variables influenced survival outcomes.
+
+The objective of this project is to:
+1. Explore patterns and relationships within the data using visualizations.
+2. Build and evaluate a predictive model that estimates passenger survival with reasonable accuracy.
+
+---
+
+## Dataset
+The dataset contains passenger-level information, including:
+- Age  
+- Sex  
+- Passenger class  
+- Fare  
+- Survival outcome (Yes / No)
+
+Missing values were handled during preprocessing to ensure reliable and consistent analysis.
+
+---
+
+## Tools & Technologies
+- **R**
+- **tidyverse**
+- **ggplot2**
+- **dplyr**
+- **caret**
+
+---
+
+## Exploratory Data Analysis (EDA)
+
+### Age Distribution by Survival
+The age distribution analysis shows that most passengers were young adults between 20 and 40 years old. Survival occurred across nearly all age groups; however, children and younger passengers showed relatively higher survival counts compared to older age groups.
+
+Passengers above the age of 50 had noticeably fewer survivors, suggesting that survival probability generally declined with age. Despite these trends, there is substantial overlap between survivors and non-survivors, indicating that age alone is not sufficient to explain survival outcomes.
+
+**Insight:**  
+Age contributes to survival differences but is not a strong standalone predictor.
+
+![Age Distribution by Survival](outputs/figures/age_distribution_by_survival.png)
+
+---
+
+### Survival Proportion by Sex
+A strong survival disparity is observed when survival is grouped by sex. Approximately three-quarters of female passengers survived, while the majority of male passengers did not.
+
+This pattern reflects the historical evacuation practice of prioritizing women and children. Sex emerges as one of the strongest predictors of survival in the dataset.
+
+**Insight:**  
+Female passengers were significantly more likely to survive than male passengers.
+
+![Survival by Sex](outputs/figures/survival_by_sex.png)
+
+---
+
+## Modeling Approach
+A binary classification model was developed to predict survival outcomes. Model performance was evaluated using multiple metrics to ensure balanced and reliable predictions rather than relying solely on accuracy.
+
+---
+
+## Model Performance
+- **Accuracy:** 80.3%  
+- **95% Confidence Interval:** (72.8%, 86.5%)  
+- **No Information Rate:** 59.2%  
+- **P-Value (Accuracy > NIR):** < 0.001  
+- **Kappa:** 0.59  
+
+### Class-Specific Performance
+- **Sensitivity:** 84.5%  
+- **Specificity:** 74.1%  
+- **Balanced Accuracy:** 79.3%  
+
+The model performs significantly better than a baseline classifier and maintains a good balance between identifying survivors and non-survivors. The Kappa score indicates moderate to strong agreement beyond chance, and McNemar’s test suggests no systematic classification bias.
+
+---
+
+## Conclusion
+This analysis demonstrates that survival on the Titanic was strongly influenced by demographic factors, particularly sex, while age played a secondary role. The predictive model achieved reliable performance and provides interpretable results suitable for decision-support rather than naive prediction.
+
+The project highlights the importance of combining exploratory analysis with model evaluation to derive meaningful insights from real-world data.
+
+---
+
+## Key Skills Demonstrated
+- Data cleaning and preprocessing  
+- Exploratory data analysis (EDA)  
+- Data visualization using ggplot2  
+- Binary classification modeling  
+- Model evaluation and interpretation  
+- Communicating insights clearly and professionally
